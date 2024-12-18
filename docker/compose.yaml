@@ -1,0 +1,11 @@
+services:
+  extension-backend:
+    image: ${{ secrets.PROD_ECR_REGISTRY }}:latest
+    ports:
+      - "3000:3000"
+    restart: always
+    env_file:
+      - .env
+    container_name: skillhigh
+    environment:
+      - NODE_ENV=production
